@@ -408,8 +408,9 @@ int binimage_set_header_layout(const char* layout)
         header_layout = HL_ESP8266;
         return 1;
     }
-    else if (strcasecmp(layout, "esp32")) {
+    else if (strcasecmp(layout, "esp32") == 0) {
         header_layout = HL_ESP32;
+        return 1;
     }
     LOGERR("invalid image header layout: %s", layout);
     return 0;
